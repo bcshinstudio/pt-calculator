@@ -3,6 +3,7 @@
   color: #10254a;
   background: #f5f9fd;
   font-synthesis: none;
+
   --blue: #1683cf;
   --blue-soft: #e7f3fc;
   --orange-soft: #ffeddd;
@@ -10,7 +11,9 @@
   --border: #cfdeec;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -21,7 +24,11 @@ body {
     linear-gradient(180deg, #f9fcff 0%, #f2f8fc 100%);
 }
 
-button, input, select { font: inherit; }
+button,
+input,
+select {
+  font: inherit;
+}
 
 .page-shell {
   width: min(100%, 1180px);
@@ -58,12 +65,21 @@ button, input, select { font: inherit; }
 }
 
 .title-copy h1 {
-  margin: 4px 0 8px;
-  font-size: clamp(2.3rem, 4.4vw, 3.7rem);
-  line-height: 1;
-  letter-spacing: -.045em;
+  margin: 4px 0 4px;
+  font-size: clamp(2.15rem, 4vw, 3.45rem);
+  line-height: 1.02;
+  letter-spacing: -.04em;
   font-weight: 670;
   color: #10264d;
+}
+
+.app-subtitle {
+  margin: 0 0 10px !important;
+  color: #1683cf !important;
+  font-size: clamp(.95rem, 1.4vw, 1.08rem) !important;
+  line-height: 1.2 !important;
+  font-weight: 650;
+  letter-spacing: .04em;
 }
 
 .title-copy p {
@@ -90,7 +106,9 @@ button, input, select { font: inherit; }
   font-size: .72rem;
 }
 
-.tool-mark small { margin-top: 5px; }
+.tool-mark small {
+  margin-top: 5px;
+}
 
 .calculator-card {
   padding: 42px 52px 30px;
@@ -100,7 +118,9 @@ button, input, select { font: inherit; }
   box-shadow: 0 14px 38px rgba(39, 79, 119, .10);
 }
 
-.field-group { margin-bottom: 30px; }
+.field-group {
+  margin-bottom: 30px;
+}
 
 .field-group label {
   display: flex;
@@ -121,15 +141,24 @@ button, input, select { font: inherit; }
   height: 52px;
 }
 
-.icon-tile.blue { background: var(--blue-soft); }
-.icon-tile.orange { background: var(--orange-soft); }
-.icon-tile.green { background: var(--green-soft); }
+.icon-tile.blue {
+  background: var(--blue-soft);
+}
+
+.icon-tile.orange {
+  background: var(--orange-soft);
+}
+
+.icon-tile.green {
+  background: var(--green-soft);
+}
 
 .control-indent {
   margin-left: 70px;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   min-height: 68px;
   padding: 0 22px;
@@ -140,7 +169,10 @@ input, select {
   outline: none;
   font-size: 1.3rem;
   font-weight: 400;
-  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  transition:
+    border-color .15s ease,
+    box-shadow .15s ease,
+    background .15s ease;
 }
 
 select {
@@ -159,9 +191,13 @@ select {
   background-size: 64px 100%, 1px 100%, 26px 26px;
 }
 
-input:hover, select:hover { border-color: #aec5da; }
+input:hover,
+select:hover {
+  border-color: #aec5da;
+}
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   border-color: #6ca8d5;
   box-shadow: 0 0 0 4px rgba(22,131,207,.10);
 }
@@ -178,7 +214,45 @@ input::placeholder {
   line-height: 1.45;
 }
 
-.hidden { display: none; }
+.clear-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.clear-button {
+  border: 1px solid #c9daed;
+  background: #ffffff;
+  color: #53739a;
+  border-radius: 9px;
+  padding: 7px 18px;
+  font-size: .88rem;
+  cursor: pointer;
+  transition:
+    border-color .15s ease,
+    background .15s ease,
+    color .15s ease;
+}
+
+.clear-button:hover {
+  border-color: #afc7dd;
+  background: #f7fbff;
+  color: #365f8b;
+}
+
+.clear-button:focus-visible {
+  outline: none;
+  border-color: #6ca8d5;
+  box-shadow: 0 0 0 3px rgba(22,131,207,.10);
+}
+
+.clear-button:active {
+  background: #eef6fc;
+}
+
+.hidden {
+  display: none;
+}
 
 .message {
   min-height: 20px;
@@ -187,8 +261,13 @@ input::placeholder {
   color: #b42318;
 }
 
-.message.warning { color: #9a6700; }
-.message.success { color: #067647; }
+.message.warning {
+  color: #9a6700;
+}
+
+.message.success {
+  color: #067647;
+}
 
 .status-row {
   display: flex;
@@ -224,7 +303,9 @@ input::placeholder {
 }
 
 @media (max-width: 760px) {
-  .page-shell { padding: 24px 15px 38px; }
+  .page-shell {
+    padding: 24px 15px 38px;
+  }
 
   .title-row {
     gap: 14px;
@@ -239,7 +320,13 @@ input::placeholder {
 
   .title-copy h1 {
     margin-top: 2px;
-    font-size: 2.2rem;
+    font-size: 2rem;
+    line-height: 1.05;
+  }
+
+  .app-subtitle {
+    margin: 3px 0 8px !important;
+    font-size: .86rem !important;
   }
 
   .title-copy p {
@@ -248,15 +335,22 @@ input::placeholder {
     line-height: 1.45;
   }
 
-  .desktop-break { display: none; }
-  .tool-mark { display: none; }
+  .desktop-break {
+    display: none;
+  }
+
+  .tool-mark {
+    display: none;
+  }
 
   .calculator-card {
     padding: 27px 20px 22px;
     border-radius: 19px;
   }
 
-  .field-group { margin-bottom: 23px; }
+  .field-group {
+    margin-bottom: 23px;
+  }
 
   .field-group label {
     gap: 10px;
@@ -271,9 +365,12 @@ input::placeholder {
     border-radius: 9px;
   }
 
-  .control-indent { margin-left: 0; }
+  .control-indent {
+    margin-left: 0;
+  }
 
-  input, select {
+  input,
+  select {
     min-height: 58px;
     padding-left: 16px;
     font-size: 1.15rem;
@@ -283,6 +380,15 @@ input::placeholder {
     padding-right: 58px;
     background-position: right center, right 51px center, right 14px center;
     background-size: 52px 100%, 1px 100%, 22px 22px;
+  }
+
+  .clear-row {
+    margin-top: 8px;
+  }
+
+  .clear-button {
+    padding: 7px 16px;
+    font-size: .84rem;
   }
 
   .status-row {
