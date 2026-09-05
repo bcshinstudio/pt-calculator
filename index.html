@@ -5,181 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f5f9fd" />
   <meta
-    name="description"
-    content="HVAC PT Companion is a pressure-temperature calculator for HVAC/R refrigerants."
+          name="description"
+          content="HVAC PT Companion is a pressure-temperature calculator for HVAC/R refrigerants."
   />
-  <title>HVAC PT Companion | PT Calculator</title>
+  <title>HVAC PT Companion</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <main class="page-shell">
-
-    <section class="intro" aria-labelledby="page-title">
-      <div class="title-row">
-
+<main class="page-shell">
+  <section class="intro" aria-labelledby="page-title">
+    <div class="title-row">
         <span class="icon-tile title-icon">
           <img src="assets/snowflake.svg" alt="" />
         </span>
 
-        <div class="title-copy">
-          <h1 id="page-title">HVAC PT Companion</h1>
-          <p class="app-subtitle">PT Calculator</p>
-
-          <p>
-            Select a refrigerant and enter a temperature to find the saturation pressure,
-            <br class="desktop-break" />
-            or enter a pressure to find the saturation temperature.
-          </p>
-        </div>
-
-        <div class="tool-mark" aria-hidden="true">
-          <span>HVACR TOOL</span>
-          <small>PRESSURE&nbsp; · &nbsp;TEMPERATURE</small>
-        </div>
-
+      <div class="title-copy">
+        <h1 id="page-title">PT Companion</h1>
+        <p class="app-subtitle">HVAC/R Pressure · Temperature</p>
+        <p>
+          Select a refrigerant and enter a temperature to find the saturation pressure,
+          <br class="desktop-break" />
+          or enter a pressure to find the saturation temperature.
+        </p>
       </div>
-    </section>
 
-    <section
-      class="calculator-card"
-      aria-label="HVAC PT Companion pressure temperature calculator"
-    >
+      <div class="tool-mark" aria-hidden="true">
+        <span>HVACR TOOL</span>
+        <small>PRESSURE&nbsp; · &nbsp;TEMPERATURE</small>
+      </div>
+    </div>
+  </section>
 
-      <div class="field-group">
-
-        <label for="refrigerant">
+  <section
+          class="calculator-card"
+          aria-label="HVAC PT Companion pressure temperature calculator"
+  >
+    <div class="field-group">
+      <label for="refrigerant">
           <span class="icon-tile blue">
             <img src="assets/refrigerant.svg" alt="" />
           </span>
+        <span>Refrigerant</span>
+      </label>
 
-          <span>Refrigerant</span>
-        </label>
-
-        <div class="control-indent">
-          <select
-            id="refrigerant"
-            autocomplete="off"
-          ></select>
-        </div>
-
+      <div class="control-indent">
+        <select id="refrigerant" autocomplete="off"></select>
       </div>
+    </div>
 
-      <div
-        id="saturation-wrap"
-        class="field-group hidden"
-      >
-
-        <label for="saturation-point">
+    <div id="saturation-wrap" class="field-group hidden">
+      <label for="saturation-point">
           <span class="icon-tile blue">
             <img src="assets/saturation.svg" alt="" />
           </span>
+        <span>Saturation Point</span>
+      </label>
 
-          <span>Saturation Point</span>
-        </label>
-
-        <div class="control-indent">
-
-          <select
-            id="saturation-point"
-            autocomplete="off"
-          >
-            <option value="dew">Dew</option>
-            <option value="bubble">Bubble</option>
-          </select>
-
-          <p class="field-note">
-            Dew is normally used for superheat. Bubble is normally used for subcooling.
-          </p>
-
-        </div>
-
+      <div class="control-indent">
+        <select id="saturation-point" autocomplete="off">
+          <option value="dew">Dew</option>
+          <option value="bubble">Bubble</option>
+        </select>
+        <p class="field-note">
+          Dew is normally used for superheat. Bubble is normally used for subcooling.
+        </p>
       </div>
+    </div>
 
-      <div class="field-group">
-
-        <label for="temperature">
+    <div class="field-group">
+      <label for="temperature">
           <span class="icon-tile orange">
             <img src="assets/thermometer.svg" alt="" />
           </span>
+        <span>Temperature (°F)</span>
+      </label>
 
-          <span>Temperature (°F)</span>
-        </label>
-
-        <div class="control-indent">
-
-          <input
-            id="temperature"
-            type="number"
-            inputmode="decimal"
-            step="any"
-            placeholder="e.g. 70"
-            autocomplete="off"
-          />
-
-        </div>
-
+      <div class="control-indent">
+        <input
+                id="temperature"
+                type="number"
+                inputmode="decimal"
+                step="any"
+                placeholder="e.g. 70"
+                autocomplete="off"
+        />
       </div>
+    </div>
 
-      <div class="field-group">
-
-        <label for="pressure">
+    <div class="field-group">
+      <label for="pressure">
           <span class="icon-tile green">
             <img src="assets/pressure-gauge.svg" alt="" />
           </span>
+        <span>Pressure (PSIG)</span>
+      </label>
 
-          <span>Pressure (PSIG)</span>
-        </label>
-
-        <div class="control-indent">
-
-          <input
-            id="pressure"
-            type="number"
-            inputmode="decimal"
-            step="any"
-            placeholder="e.g. 200"
-            autocomplete="off"
-          />
-
-          <div class="clear-row">
-            <button
-              type="button"
-              id="clear-fields"
-              class="clear-button"
-            >
-              Clear
-            </button>
-          </div>
-
-        </div>
-
+      <div class="control-indent">
+        <input
+                id="pressure"
+                type="number"
+                inputmode="decimal"
+                step="any"
+                placeholder="e.g. 200"
+                autocomplete="off"
+        />
       </div>
+    </div>
 
-      <div
-        id="message"
-        class="message control-indent"
-        role="status"
-        aria-live="polite"
-      ></div>
+    <div class="clear-row">
+      <button type="button" id="clear-fields" class="clear-button">
+        Clear
+      </button>
+    </div>
 
-      <div class="status-row">
+    <div
+            id="message"
+            class="message control-indent"
+            role="status"
+            aria-live="polite"
+    ></div>
 
-        <p
-          id="data-status"
-          class="data-status"
-        ></p>
+    <div class="status-row">
+      <p id="data-status" class="data-status"></p>
+      <p class="units-note">ALL PRESSURES IN PSIG</p>
+    </div>
+  </section>
 
-        <p class="units-note">
-          ALL PRESSURES IN PSIG
-        </p>
+  <footer class="studio-footer">
+    BC SHIN STUDIO
+  </footer>
+</main>
 
-      </div>
-
-    </section>
-
-  </main>
-
-  <script src="app.js" defer></script>
+<script src="app.js" defer></script>
 </body>
 </html>
