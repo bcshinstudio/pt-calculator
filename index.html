@@ -10,6 +10,12 @@
   />
   <title>HVAC PT Companion</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Installable PT Companion for iPhone and other browsers -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="PT Companion" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 </head>
 
 <body>
@@ -138,5 +144,21 @@
 </main>
 
 <script src="app.js" defer></script>
+  <!-- Service worker enables offline calculator and refrigerant lookup. -->
+  <script>
+	if (
+	  'serviceWorker' in navigator &&
+	  (
+		location.protocol === 'https:' ||
+		location.hostname === 'localhost' ||
+		location.hostname === '127.0.0.1'
+	  )
+	) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js', { scope: './' })
+          .catch(error => console.warn('PT Companion offline setup unavailable:', error));
+      });
+    }
+  </script>
 </body>
 </html>
